@@ -63,6 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
@@ -76,8 +77,12 @@ WSGI_APPLICATION = 'clinica.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd1s69s8hirof32',
+        'USER': 'oxwuxjmtqfgasj',
+        'PASSWORD': '449c2d940045c42d9b48bee97342090e831cf938af77f4e4be2e8edf79b6de18',
+        'HOST': 'ec2-34-231-221-151.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
