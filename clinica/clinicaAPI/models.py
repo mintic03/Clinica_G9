@@ -16,7 +16,7 @@ class Persona(models.Model):
 
 class Paciente(models.Model):
     id = models.AutoField(primary_key=True)
-    persona = models.ForeignKey(Persona, on_delete=models.CASCADE)
+    persona = models.ForeignKey(Persona, default=1, on_delete=models.CASCADE)
     direccion = models.CharField(max_length = 50)
     ciudad = models.CharField(max_length = 45)
     fecha_Nacimiento = models.CharField(max_length=15)
@@ -28,11 +28,11 @@ class SignosVitale(models.Model):
     paciente= models.ForeignKey(Paciente, on_delete = models.CASCADE)
     tipo_signo_vital = models.CharField(max_length = 70)
     valor_signo_vital = models.CharField(max_length = 45)
-    fecha = models.DateField()
+    fecha = models.CharField(max_length=15)
 
 class Medico(models.Model):
     id_medico = models.AutoField(primary_key=True)
-    persona = models.ForeignKey(Persona, on_delete=models.CASCADE)
+    persona = models.ForeignKey(Persona, default=1, on_delete=models.CASCADE)
     especialidad = models.CharField(max_length = 45)
     signos=models.ForeignKey(SignosVitale, on_delete=models.CASCADE)
     paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
@@ -40,13 +40,13 @@ class Medico(models.Model):
 
 class EnfermeroAux(models.Model):
     id= models.AutoField(primary_key=True)
-    persona = models.ForeignKey(Persona, on_delete=models.CASCADE)
+    persona = models.ForeignKey(Persona, default=1, on_delete=models.CASCADE)
     paciente=models.ForeignKey(Paciente, on_delete=models.CASCADE)
     signos=models.ForeignKey(SignosVitale, on_delete=models.CASCADE)
 
 class Familiar(models.Model):
     id_familiar = models.AutoField(primary_key=True)
-    persona= models.ForeignKey(Persona, on_delete = models.CASCADE)
+    persona= models.ForeignKey(Persona, default=1, on_delete = models.CASCADE)
     parentesco = [
 		('F','Padre/Madre'),
 		('S','Hijo/Hija'),
