@@ -1,7 +1,6 @@
 
 from django.shortcuts import render
 import json
-from urllib import response
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotAllowed
 from .models import Persona, Paciente, SignosVitale, Medico, Familiar, EnfermeroAux
 
@@ -34,10 +33,9 @@ def newPacien(request):
                 persona = pers, 
                 direccion = data["direccion"], 
                 ciudad = data["ciudad"], 
-                fechaNto = data["fechaNto"],
+                fecha_Nacimiento = data["fecha_Nacimiento"],
                 latitud = data["latitud"],
-                longitud = data["longitud"], 
-                
+                longitud = data["longitud"],
             )
             paciente.save()
             return HttpResponse("Paciente Agregada")
@@ -59,8 +57,8 @@ def newSignoVital(request):
 
             signovital = SignosVitale( 
                 paciente = paciente, 
-                tipo = data["tipo"],
-                valor = data["valor"], 
+                tipo_signo_vital = data["tipo_signo_vital"],
+                valor_signo_vital = data["valor_signo_vital"], 
                 fecha = data["fecha"],
             )
             signovital.save()
@@ -103,10 +101,10 @@ def newFamiliar(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            persona = Persona.objects.filter(id = data["personaId"]).first()
+            persona = Persona.objects.filter(id = data["persona"]).first()
             if (not persona):
                 return HttpResponseBadRequest("No existe persona con ID")
-            paciente = Paciente.objects.filter(id = data["pacienteId"]).first()
+            paciente = Paciente.objects.filter(id = data["paciente_Id"]).first()
             if (not paciente):
                 return HttpResponseBadRequest("No existe paciente con ID")
 
@@ -114,7 +112,7 @@ def newFamiliar(request):
                 persona = persona, 
                 paciente = paciente, 
                 #parentesco = parentesco, 
-                email = data["email"],
+                e_mail = data["e_mail"],
             )
             familiar.save()
             return HttpResponse("Familiar Agregado")
@@ -164,14 +162,14 @@ def getAllPacientes(request):
         allPacienteDta=[]
         for x,y in zip(pacientes,personas):
             data={
-                "id":x.id,
+                "id":y.id,
                 "nombre":y.nombre,
                 "apellido":y.apellido,
                 "telefono":y.telefono,
                 "genero":y.genero,
                 "direccion":x.direccion,
                 "ciudad":x.ciudad,
-                "fechaNto":x.fechaNto,
+                "fecha_Nacimiento":x.fecha_Nacimiento,
                 "latitud":x.latitud,
                 "longitud":x.longitud
             }
@@ -195,14 +193,14 @@ def getOnePaciente(request,id):
             return HttpResponseBadRequest("No hay persona con ese ID")
 
         Dta={
-            "id":paciente.id,
+            "id":persona.id,
             "nombre":persona.nombre,
             "apellido":persona.apellido,
             "telefono":persona.telefono,
             "genero":persona.genero,
             "direccion":paciente.direccion,
             "ciudad":paciente.ciudad,
-            "fechaNto":paciente.fechaNto,
+            "fecha_Nacimiento":paciente.fecha_Nacimiento,
             "latitud":paciente.latitud,
             "longitud":paciente.longitud
         }               
