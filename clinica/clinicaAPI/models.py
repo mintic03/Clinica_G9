@@ -2,6 +2,9 @@ from operator import mod
 from tkinter import CASCADE
 from django.db import models
 
+class Registro(models.Model):
+    id = models.BigIntegerField(primary_key = True)
+    contrase = models.IntegerField()
 
 class Persona(models.Model):
     id = models.BigIntegerField(primary_key = True)
@@ -46,14 +49,8 @@ class EnfermeroAux(models.Model):
 
 class Familiar(models.Model):
     id_familiar = models.AutoField(primary_key=True)
-    persona= models.ForeignKey(Persona, default=1, on_delete = models.CASCADE)
-    parentesco = [
-		('F','Padre/Madre'),
-		('S','Hijo/Hija'),
-		('B','Hermano/Hermana'),
-		('G','Abuelo/Abuela'),
-		('O','Otro')
-	]
-    parentesco = models.CharField(max_length = 1, choices = parentesco, default ='F')
-    e_mail = models.EmailField(max_length = 45)
+    persona= models.ForeignKey(Persona, on_delete = models.CASCADE)
     paciente_id = models.ForeignKey(Paciente, on_delete=models.CASCADE)
+    parentesco = models.CharField(max_length=30)
+    e_mail = models.EmailField()
+    

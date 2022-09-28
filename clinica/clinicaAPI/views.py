@@ -2,7 +2,23 @@
 from django.shortcuts import render
 import json
 from django.http import HttpResponse, HttpResponseBadRequest, HttpResponseNotAllowed
-from .models import Persona, Paciente, SignosVitale, Medico, Familiar, EnfermeroAux
+from .models import Registro, Persona, Paciente, SignosVitale, Medico, Familiar, EnfermeroAux
+
+def newRegistro(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            regis = Registro(
+                id = data["id"], 
+                contrase = data["contrase"], 
+                
+            )
+            regis.save()
+            return HttpResponse("Registro Agregado")
+        except:
+            return HttpResponseBadRequest("Error en los datos")
+    else:
+        return HttpResponseNotAllowed(['POST'], "Metodo invalido")
 
 def newPersona(request):
     if request.method == 'POST':
@@ -111,7 +127,7 @@ def newFamiliar(request):
             familiar = Familiar(
                 persona = persona, 
                 paciente = paciente, 
-                #parentesco = parentesco, 
+                parentesco = data["parentesco"], 
                 e_mail = data["e_mail"],
             )
             familiar.save()
