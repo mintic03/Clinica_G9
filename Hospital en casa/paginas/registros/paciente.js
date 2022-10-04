@@ -1,5 +1,5 @@
-//const newPersonaUrl = 'https://apiclinicag9.herokuapp.com/newPersona';
-const newPersonaUrl = 'http://127.0.0.1:8000/newPersona';
+//const newPacienteUrl = 'https://apiclinicag9.herokuapp.com/newPacien';
+const newPacienteUrl = 'http://127.0.0.1:8000/newPacien';
 
 //customer = [];
 
@@ -17,11 +17,12 @@ function validate_name(val){
 
 function recopilacionDatos(evt){
   evt.preventDefault();
-  const id = document.newPersona.id.value;
-  const nombre = document.newPersona.nombre.value.trim();
-  const apellido = document.newPersona.apellido.value.trim();
-  const telefono = document.newPersona.telefono.value;
-  const genero = document.newPersona.genero.value;
+  const id = document.newPaciente.id.value;
+  const direccion = document.newPaciente.direccion.value.trim();
+  const ciudad = document.newPaciente.ciudad.value.trim();
+  const fecha = document.newPaciente.fecha.value;
+  const latitud = document.newPaciente.latitud.value;
+  const longitud = document.newPaciente.longitud.value;
 
   // let result = validate_id(id);
   // if (result) {
@@ -29,20 +30,21 @@ function recopilacionDatos(evt){
   //   return;
   // }
 
-  const persona = {
+  const paciente = {
     id: id,
-    nombre: nombre,
-    apellido: apellido,
-    telefono: telefono,
-    genero: genero,
+    direccion: direccion,
+    ciudad: ciudad,
+    fecha: fecha,
+    latitud: latitud,
+    longitud: longitud,
 
   };
-  console.log(persona);
-  const dataToSend = JSON.stringify(persona);
-  savePersona(dataToSend);
+  console.log(paciente);
+  const dataToSend = JSON.stringify(paciente);
+  savePaciente(dataToSend);
 }
 
-function savePersona(data) {
+function savePaciente(data) {
   // Petición HTTP
 
   var myHeaders = new Headers();
@@ -59,10 +61,10 @@ function savePersona(data) {
   };
 
 
-  fetch(newPersonaUrl, requestOptions)
+  fetch(newPacienteUrl, requestOptions)
     .then((response) => {response.text()})
     .then((result) => {
-      if (result === "Persona Agregada"){
+      if (result === "Paciente Agregada"){
         handleSuccess(result);
       } else if (
         result === "ya existe docuemnto "
@@ -73,21 +75,21 @@ function savePersona(data) {
 }
 
 function handleSuccess(){
-   document.getElementById("formPersona").remove();
+   document.getElementById("formPaciente").remove();
    const message = document.createElement("p");
-   message.innerText = "persona  agregado";
+   message.innerText = "paciente  agregado";
    const info = document.getElementById("info");
    info.appendChild(message);
 }
 
 function handleError(){
-   document.getElementById("formPersona").remove();
+   document.getElementById("formPaciente").remove();
    const message = document.createElement("p");
-   message.innerText = "mo se pudo agregar la persona";
+   message.innerText = "mo se pudo agregar el paciente";
    const info = document.getElementById("info");
    info.appendChild(message);
 }
 
 
 
-document.newPersona.addEventListener("submit", recopilacionDatos);
+document.newPaciente.addEventListener("submit", recopilacionDatos);

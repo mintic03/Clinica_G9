@@ -18,7 +18,7 @@ class Persona(models.Model):
     genero = models.CharField(max_length = 1, choices = genero, default ='F') 
 
 class Paciente(models.Model):
-    id = models.AutoField(primary_key=True)
+    id = models.BigIntegerField(primary_key=True)
     persona = models.ForeignKey(Persona, default=1, on_delete=models.CASCADE)
     direccion = models.CharField(max_length = 50)
     ciudad = models.CharField(max_length = 45)

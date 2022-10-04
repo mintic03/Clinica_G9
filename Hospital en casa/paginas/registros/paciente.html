@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!--CSS PERSONALIZADO-->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <!-- <div class="logo">
+        <img src="img/logo.png" alt="logo" class="nav-brand">
+        <h1>HospiService</h1>
+    </div> -->
+
+    <div class="container">
+        <nav class="nav-main">
+            <ul class="nav-menu">
+                <li>
+                    <a href="../index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="../consultaAux.html">Registrar</a>
+                    <ul class="menu-vertical">
+                        <li><a href="#">Paciente</a></li>
+                        <li><a href="../registros/persona.html">Persona</a></li>
+                        <li><a href="../registros/familiar.html">Familiar</a></li>
+                        <li><a href="../registros/medico.html">Medico</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Cerrar sesion</a>
+                </li>
+                <li>
+                    <a href="../consultaAux.html">Consultar</a>
+                </li>
+                
+    
+        </nav>
+            <hr>
+        <!-- BIENVENIDA -->
+            <header class="bienvenida">
+                <h2>Hola Juliana Vargas</h2>
+                <h3>Auxiliar Medico</h3>
+                <h4>Registro Paciente</h4>
+
+        <!-- FORMULARIO -->
+        <div class="md:mt-0">
+            <div id="info">
+                <form id ="formPaciente" name="newPaciente" method="post">
+                    <h4>Formulario Registro paciente</h4>
+                    <label class="label">Id Paceinte</label>
+                    <input class="controls" type="text" name="id-paciente" id="id" placeholder="Ingrese id o cedula ">
+                    <!--<label for="nombre" class="label">Nombre</label>
+                    <input class="controls" type="text" name="nombre" id="nombre" placeholder="Ingrese el nombre ">
+                    <label for="apellido" class="label">Apellido</label>
+                    <input class="controls" type="text" name="apellido" id="apellido" placeholder="Ingrese el apellido">
+                    <label for="telefono" class="label">Telefono</label>
+                    <input class="controls" type="telefono" name="telefono" id="telefono" placeholder="Ingrese el telefono">
+                    <label class="label">Genero</label>
+                    <input class="controls" type="genero" name="genero" id="genero" placeholder="Ingrese el genero"> -->
+                    <label class="label">Direccion</label>
+                    <input class="controls" type="direccion" name="direccion" id="direccion" placeholder="Ingrese la direccion">
+                    <label class="label">Ciudad</label>
+                    <input class="controls" type="ciudad" name="ciudad" id="ciudad" placeholder="Ingrese la ciudad de residencia">
+                    <label class="label">Fecha de nacimiento</label>
+                    <input class="controls" type="fecha_nac" name="fecha" id="fecha" placeholder="AAAA-MM-DD">
+                    <label class="label">latitud</label>
+                    <input class="controls" type="latitud" name="latitud" id="latitud" placeholder="g,m">
+                    <label class="label">longitud</label>
+                    <input class="controls" type="longitud" name="longitud" id="longitud" placeholder="g,m">
+                    <!-- <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p> -->
+                    
+                    <button type="submit" class="botons">Resgistro Paciente</button>
+                    <input class="botons" type="submit" value="Modificar">
+                    <input class="botons" type="submit" value="Registrar">
+                    <input class="botons" type="submit" value="Eliminar">
+                    <!-- <p><a href="#">¿Ya tengo Cuenta?</a></p> -->
+                </form>
+            </div>
+        </div>     
+
+            
+            
+    </div>
+
+
+
+<nav class="nav-inferior">
+    <ul class="nav-nosotros">
+        <li>
+            <a href="#"><b>Nosotros</b></a>
+        </li>
+    <li>
+        <a href="#">Quienes somos</a>
+    </li>
+    <li>
+        <a href="#">Trabaja con nosotros</a>
+    </li>
+    <li>
+        <a href="#">Canales de contacto</a>
+    </li>   
+    </ul>
+    <ul class="nav-contacto">
+        <li>
+            <a href="#"><b>Contacto</b></a>
+        </li>
+    <li>
+        <a href="#">Lineas de atencion</a>
+    </li>
+    <li>
+        <a href="#">Chat en vivo</a>
+    </li>
+    <li>
+        <a href="#">Dudas y Sugerencias</a>
+    </li>   
+    </ul>
+
+    <ul class="nav-siguenos">
+        <li>
+            <a href="#"><b>Siguenos</b></a>
+        </li>
+        <ul class="nav-iconos">
+        <li>
+            <a href="#">
+                <i class="fa-brands fa-whatsapp fa-2x"></i>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-brands fa-facebook fa-2x"></i>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa-brands fa-instagram fa-2x"></i>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <li>
+                    <a href="#">
+                        <i class="fa-brands fa-youtube fa-2x"></i>
+                    </a>
+                </li>
+            </a>
+        </li>
+    </ul>
+    </ul>
+</nav>
+
+
+
+
+    <script src="./paciente.js"></script>
+
+    
+</body>
+</html>

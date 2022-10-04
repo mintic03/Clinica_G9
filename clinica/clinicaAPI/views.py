@@ -49,7 +49,11 @@ def newPacien(request):
             pers = Persona.objects.filter(id = data["userId"]).first()
             if (not pers):
                 return HttpResponseBadRequest("No existe persona con ese ID")
+            paci = Paciente.objects.filter(id = data["pacienId"]).first()
+            if (paci):
+                return HttpResponseBadRequest("ya existe paciente con ese ID")
             paciente = Paciente(
+                id=data["pacienId"],
                 persona = pers, 
                 direccion = data["direccion"], 
                 ciudad = data["ciudad"], 
