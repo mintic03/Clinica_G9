@@ -24,14 +24,18 @@ def newPersona(request):
     if request.method == 'POST':
         try:
             data = json.loads(request.body)
-            persona = Persona(
-                id = data["id"], 
-                nombre = data["nombre"], 
-                apellido = data["apellido"], 
-                telefono = data["telefono"], 
-                #genero = data["genero"] 
-            )
-            persona.save()
+            persona = Persona.objects.filter(id = data["id"]).first()
+            if (persona):
+                return HttpResponseBadRequest("Ya existe persona con ese documento de identidad")
+            else:
+                persona = Persona(
+                    id = data["id"], 
+                    nombre = data["nombre"], 
+                    apellido = data["apellido"], 
+                    telefono = data["telefono"], 
+                    genero = data["genero"], 
+                )
+                persona.save()
             return HttpResponse("Persona Agregada")
         except:
             return HttpResponseBadRequest("Error en los datos")

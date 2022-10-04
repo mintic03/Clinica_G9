@@ -1,0 +1,221 @@
+/* Global */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+  }
+
+body{
+    background: #ffffff;
+    color:black;
+    font-family: "Oswald", sans-serif;
+    font-size: 18px;
+ 
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+  }
+
+.container {
+    width: 90%;
+    margin: auto;
+  }
+
+  .logo{
+    color: #0A5C8B;
+    font-family: "Oswald", sans-serif;
+    font-size: 18px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100px;
+    padding: 20px 0;
+    
+  }
+
+  /* Navigation */
+.nav-main {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    padding: 20px 0;
+  }
+
+  .nav-brand {
+    width: 200px;
+  }
+  
+  /* Navbar Left */
+  .nav-main ul {
+    display: flex;
+    margin: 50px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+  }
+  
+  .nav-main ul li {
+    padding: 5px;
+  }
+  
+  .nav-main ul li a {
+    padding: 5px;
+  }
+  
+  .nav-main ul li a:hover {
+    border-bottom: 2px solid black;
+  }
+  
+  .nav-main ul.nav-menu {
+    flex: 1;
+    margin-right: 6px;
+  }
+
+  .bienvenida {
+    display: flex;
+    margin-left: 150px;
+    margin-top: 25px;
+    flex-direction: column;
+    align-items: self-start;
+    text-align: center;
+  } 
+
+  .form-register-paciente {
+    width: 400px;
+    background: #C1E0F1;
+    padding: 10px;
+    margin: start;
+    margin-left: 50px;
+    margin-top: 60px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: #0768A0;
+    box-shadow: 7px 13px 37px #06486E;
+  }
+  
+  .form-register-paciente h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .label{
+    font-family: 'calibri';
+    color: #0768A0;
+    display: flex;
+    flex-direction: start;
+    margin-left: 14px
+  }
+  .controls {
+    width: 100%;
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    border: 1px solid #1f53c5;
+    font-family: 'calibri';
+    font-size: 14px;
+    color: #0768A0;
+  }
+  
+    .form-register-paciente .botons {
+    width: 100%;
+    background: #1f53c5;
+    border: none;
+    padding: 10px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+  }
+
+    hr{
+      margin-top: 5px;
+      margin: 20px;
+    }
+  .showcase {
+    width: 100%;
+    height: 400px;
+    background:url("./img/doctor.jpg") no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    color: #0A5C8B;
+  }
+
+  .mision{
+    width: 80%;
+    margin: auto;
+    height: 400px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+      }
+
+    video {
+    width: 100%;
+    height: 400px;
+    align-content: center;
+    
+    }
+
+    .acciones {
+    margin-top: 50px;;
+    text-align: center;
+    font-family: 'calibri';
+    color: #0768A0;
+    
+    }
+
+    .destacados {
+      width: 80%;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      font-size: 16px;
+      text-align: center;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px;
+      margin: auto;
+
+    }
+
+    .destacados img {
+      width: 50%;
+      height: 100px;
+      padding: 10px;
+    }
+
+    .nav-inferior {
+      background-color: rgb(179, 215, 237);
+      width: 100%;
+      height: 50px;
+      padding:150px;
+    margin-top: 20px;
+    display:grid;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+       }
+
+    .nav-iconos {
+      display:flex;
+          }
+
+    
