@@ -1,5 +1,5 @@
-//const newPacienteUrl = 'https://apiclinicag9.herokuapp.com/newPacien';
-const newPacienteUrl = 'http://127.0.0.1:8000/newPacien';
+const newPacienteUrl = 'https://apiclinicag9.herokuapp.com/newPacien';
+//const newPacienteUrl = 'http://127.0.0.1:8000/newPacien';
 
 //customer = [];
 
@@ -17,10 +17,11 @@ function validate_name(val){
 
 function recopilacionDatos(evt){
   evt.preventDefault();
-  const id = document.newPaciente.id.value;
+  const pacienId = document.newPaciente.pacienId.value;
+  const userId = document.newPaciente.userId.value;
   const direccion = document.newPaciente.direccion.value.trim();
   const ciudad = document.newPaciente.ciudad.value.trim();
-  const fecha = document.newPaciente.fecha.value;
+  const fecha_Nacimiento = document.newPaciente.fecha_Nacimiento.value;
   const latitud = document.newPaciente.latitud.value;
   const longitud = document.newPaciente.longitud.value;
 
@@ -31,10 +32,11 @@ function recopilacionDatos(evt){
   // }
 
   const paciente = {
-    id: id,
+    pacienId: pacienId,
+    userId: userId,
     direccion: direccion,
     ciudad: ciudad,
-    fecha: fecha,
+    fecha_Nacimiento: fecha_Nacimiento,
     latitud: latitud,
     longitud: longitud,
 

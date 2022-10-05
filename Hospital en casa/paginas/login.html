@@ -59,19 +59,26 @@
 
         <!-- FORMULARIO -->
         <section class="form-login">
-            <h3>Login</h3>
-            <label class="label">Usuario</label>
-            <input class="controls" type="text" name="usuario" id="id" placeholder="Ingrese su usuario ">
-            <label for="contraseña" class="label">Password</label>
-            <input class="controls" type="text" name="contraseña" id="contraseña" placeholder="Ingrese su Contraseña">
             
+            <div id = "info">
+                <form id ="formRegistro" name="newRegistro" method="post">
+                    <h3>Login</h3>
+                    <label class="label">Usuario</label>
+                    <input class="controls" type="text" name="usuario" id="id" placeholder="Ingrese su usuario ">
+                    <label for="contraseña" class="label">Password</label>                    
+                    <input class="controls" type="text" name="contraseña" id="contrase" placeholder="Ingrese su Contraseña">
+
+                    <button type="submit" class="botons">INGRESAR</button>
+                    <p><a href="#">Olvide mi contraseña</a></p>
+                    <p><a href="#">Registrarse</a></p>
+                </form>
+            </div>
             
                       
-            <input class="botons" type="submit" value="INGRESAR">
-            <p><a href="#">Olvide mi contraseña</a></p>
-            <p><a href="#">Registrarse</a></p>
-            </section>     
-
+            
+        </section> 
+        
+    <script src="./login.js"></script>
     
 </body>
 </html>
